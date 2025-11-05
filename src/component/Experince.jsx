@@ -1,7 +1,8 @@
 import React from 'react'
+// Assuming these imports are correct based on your file structure
 import msi from '../assets/msi.jpg'
 import afa from '../assets/afa.png'
-import { div } from 'framer-motion/client'
+import { motion } from 'framer-motion'; // Added motion import for potential future use
 
 const Experince = () => {
 
@@ -13,7 +14,7 @@ const Experince = () => {
     },
     {
       name: "Afame Technology",
-      Title: "Foundation of AI",
+      Title: "Web Development",
       image: afa
     }
 
@@ -23,28 +24,37 @@ const Experince = () => {
 
   return (
     <div className='flex flex-col items-center justify-center mx-auto p-4'>
-      <h1 className='text-3xl font-bold mb-6'>Experience</h1>
+      {/* 1. Main Heading Color & Size Change */}
+      <h1 className='text-5xl font-bold mb-8 text-white underline'>Experience</h1>
 
       <div className='w-full max-w-5xl flex flex-col items-center justify-center gap-6 md:flex-row md:flex-wrap'>
         {
           Exp.map((item, index) => (
-            <div
+            <motion.div
               key={index}
-              className='w-full sm:w-1/2 lg:w-1/3  p-6
-                     flex flex-col justify-center items-center text-center 
-                     bg-white border-2 border-gray-200 rounded-xl 
-                     shadow-2xl hover:shadow-lg transition-shadow duration-300'
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className='
+                w-full sm:w-1/2 lg:w-1/3 p-6 flex flex-col justify-center items-center text-center 
+                // 2. Card Styling for Dark Theme
+                border-blue-400 rounded-xl 
+                shadow-2xl hover:shadow-blue-500/50 transition-shadow duration-300
+              '
             >
-              <h1 className='text-xl font-semibold mb-2'>
+              {/* 3. Company Name Size & Color Change */}
+              <h1 className='text-2xl font-bold mb-3 text-blue-300'>
                 {item.name}
               </h1>
               <img
                 src={item.image}
                 alt={item.name}
-                className='w-[50%] h-[50%] object-cover  mb-4'
+                // Image container adjustments
+                className='w-[100px] h-[100px] object-contain mb-4 rounded-lg'
               />
-              <p className='text-gray-600'>{item.Title}</p>
-            </div>
+              {/* 4. Title/Course Color & Size Change */}
+              <p className='text-xl font-medium text-gray-300'>{item.Title}</p>
+            </motion.div>
           ))
         }
       </div>

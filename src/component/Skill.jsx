@@ -18,7 +18,7 @@ const Skill = () => {
     { id: 2, name: "CSS3", image: CSS3, description: "CSS3 is used for designing and styling web pages with advanced features and animations." },
     { id: 3, name: "Tailwind-CSS", image: TailwindCSS, description: "Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces." },
     { id: 4, name: "JavaScript", image: JavaScript, description: "JavaScript is a versatile scripting language used to create dynamic and interactive web content." },
-    { id: 5, name: "React", image: React, description: "React is a popular JavaScript library for building user interfaces, especially single-page applications." },
+    { id: 5, name: "React", image: ReactLogo, description: "React is a popular JavaScript library for building user interfaces, especially single-page applications." },
     { id: 6, name: "Nodejs", image: Nodejs, description: "Node.js is a JavaScript runtime built on Chrome's V8 engine for building fast and scalable server-side applications." },
     { id: 7, name: "Express", image: Express, description: "Express is a minimal and flexible Node.js web application framework for building APIs and web apps." },
     { id: 8, name: "Postman", image: Postman, description: "Postman is a collaboration platform for API development, testing, and monitoring." },
@@ -29,43 +29,36 @@ const Skill = () => {
   ];
 
   return (
-    <div name="Skill" className='max-w-screen-2xl mx-auto px-4 md:px-20 mt-20'>
+    <div name="Skill" className=' overflow-hidden p-6'>
+      <h1 className='text-6xl font-bold underline text-center m-2 text-white'>Skills</h1>
 
 
+      <div className=' w-full container mx-auto px-4 md:px-20'>
 
-      <h2 className='text-4xl font-bold text-center text-white mb-8 border-b-4 border-gray-500 inline-block mx-auto'>
-        Skills
-      </h2>
+        {/* Core Changes: flex-nowrap and overflow-x-scroll */}
+        <div className='Skill flex gap-7 overflow-x-scroll flex-nowrap pb-4 scrollbar-hide'>
 
-      {/* Main container with border and background blur */}
-      <div className='flex flex-row flex-wrap gap-5 justify-center p-6 rounded-xl border border-gray-700 backdrop-filter backdrop-blur-lg bg-white/10'>
-
-        {
-          skills.map(({ id, image, name, description }) => (
-            // Individual skill item with hover scale and border
+          {skills.map(({ id, name, image, description }) => (
             <div
               key={id}
-              className='flex flex-col p-4 border border-gray-700 items-center hover:scale-110 duration-300 rounded-lg shadow-lg bg-gray-900/50 min-w-[150px] max-w-[200px]'
+              className=' 
+                flex flex-shrink-0 flex-col items-center justify-center p-4 
+                bg-gray-800 rounded-lg shadow-xl hover:scale-105 duration-200 
+                min-w-[120px] h-[120px] text-center
+
+                 border-blue-400 
+                 hover:shadow-blue-500/50 transition-shadow 
+              '
             >
-
-              {/* Image and its container */}
-              <div className='w-[120px] h-[120px] p-2 rounded-full border-2 border-amber-950 flex items-center justify-center bg-gray-800'>
-                <img
-                  className='w-full h-full object-contain'
-                  src={image}
-                  alt={name}
-                />
-              </div>
-
-              {/* Skill Name Heading */}
-              <div className='mt-4'>
-                <h1 className='text-xl font-semibold text-white text-center'>{name}</h1>
-              </div>
-
+              <img
+                src={image}
+                alt={name}
+                className='w-12 h-12'
+              />
+              <h2 className='text-sm font-semibold mt-2 text-white'>{name}</h2>
             </div>
-          ))
-        }
-
+          ))}
+        </div>
       </div>
     </div>
   )

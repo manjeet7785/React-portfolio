@@ -24,9 +24,9 @@ const Navbar = () => {
       <div className='max-w-screen-2xl container mx-auto px-4 md:px-20  shadow-md'>
         <div className='flex flex-row justify-between items-center'>
 
-          <div className="flex space-x-2 shadow-blue-400 ">
+          <div className="flex space-x-2 ">
             <span>
-              <h1 className='font-semibold cursor-pointer text-xl'>Man<span className='text-red-500 uppercase font-bold'>jeet </span>
+              <h1 className='font-semibold cursor-pointer text-xl'>Man<span className='text-white uppercase font-bold'>jeet </span>
                 <p className=' uppercase'>Web Developer / full Stack</p>
               </h1>
             </span>

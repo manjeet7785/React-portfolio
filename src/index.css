@@ -13,7 +13,6 @@
 
 
 body {
-  /* font-family: "Archivo Black", sans-serif; */
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 300px;
   font-style: normal;
@@ -23,17 +22,17 @@ body {
 }
 
 
-/* #typed {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-} */
+.Skill {
+  border-left: 2px solid gray;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-right: 2px solid gray;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  scrollbar-width: none;
 
-/* .saira-<uniquifier> {
-  font-family: "Saira", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-} */
+}
+
+.Skill::-webkit-scrollbar-thumb {
+  display: none;
+}
